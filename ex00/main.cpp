@@ -1,15 +1,16 @@
 #include "Bureaucrat.hpp"
 
-int main(void)
+int main( void )
 {
     try {
-        Bureaucrat bureaucrat("Dasha", 1);
+        Bureaucrat bureaucrat("ash", 1);
 
         std::cout << bureaucrat << std::endl;
 
         bureaucrat.incrementGrade();
+        // bureaucrat.decrementGrade();
     } catch (Bureaucrat::GradeTooHighException &e) {
-        std::cout << e.smth() << std::endl;
+        std::cout << e.what() << std::endl;
     }
     return EXIT_SUCCESS;
 }
