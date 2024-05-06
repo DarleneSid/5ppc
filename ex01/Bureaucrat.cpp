@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/06 21:39:09 by dsydelny          #+#    #+#             */
+/*   Updated: 2024/05/06 21:39:09 by dsydelny         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat( const std::string& name, int grade ) : _name(name), _grade(grade) {
@@ -41,14 +53,14 @@ void    Bureaucrat::decrementGrade() {
 
 void    Bureaucrat::signForm( Form& form ) {
     try {
-        form.beSigned( *this );
-        std::cout << *this << " signed " << form.getName() << std::endl;
+        form.beSigned(*this);
+        std::cout << *this << ", signed " << form.getName() << std::endl;
     } catch (Form::GradeTooLowException &e) {
-        std::cout << _name << " coulnd't sign " << form.getName() << " because " << e.what() << std::endl;
+        std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 
 std::ostream& operator<<( std::ostream& o, const Bureaucrat& rhs ) {
-    o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
+    o << rhs.getName() << ", bureaucrat grade is " << rhs.getGrade();
     return o;
 }

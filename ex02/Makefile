@@ -1,47 +1,30 @@
-NAME		= Forms
-	
-CC			= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
-RM			= rm -rf
+NAME		=	Forms
 
-OBJDIR = .objFiles
+SRC			=	Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
 
-FILES		= main Bureaucrat Form PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm
+OBJS		=	$(SRC:.cpp=.o)
 
-SRC			= $(FILES:=.cpp)
-OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+COMPILE		=	clang++
 
-#Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
-RESET		=	\e[0m
-CURSIVE		=	\e[33;3m
+FLAGS		=	-Wall -Wextra -Werror -g3 -std=c++98
 
-#Debug 
-ifeq ($(DEBUG), 1)
-   OPTS = -g
-endif
+EXE_NAME	=	-o Forms
 
-.PHONY: all clean fclean re
+EXEC		=	Forms
+
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
-	@$(CC) $(OBJ) $(OPTS) -o $(NAME)
-	@printf "$(_SUCCESS) $(GREEN)- Executable ready.\n$(RESET)"
+$(NAME): $(OBJS)
+	$(COMPILE) $(FLAGS) $(OBJS) $(EXE_NAME)
 
-$(OBJDIR)/%.o: %.cpp $(HEADER)
-	@mkdir -p $(dir $@)
-	@$(CC) $(FLAGS) $(OPTS) -c $< -o $@
+.cpp.o:
+	${COMPILE} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
 clean:
-	@$(RM) $(OBJDIR) $(OBJ) ShrubberyCreationForm_shrubbery
-	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
+	rm -rf $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
-
-re: fclean all
+	rm -rf $(EXEC)
+	
+re:	fclean all

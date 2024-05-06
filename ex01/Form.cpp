@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/06 21:39:02 by dsydelny          #+#    #+#             */
+/*   Updated: 2024/05/06 21:39:02 by dsydelny         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 
 Form::Form( const std::string& name, int gradeToSign ) : _name( name ), _gradeToSign( gradeToSign ), _gradeToExecute( 0 ) {
@@ -39,8 +51,10 @@ void    Form::beSigned(const Bureaucrat& bureaucrat) {
     _signed = true;
 }
 
-std::ostream&   operator<<( std::ostream& o, const Form& rhs ) {
-    o << "------------- Form Info -------------" << std::endl;
+std::ostream&   operator<<( std::ostream& o, const Form& rhs )
+{
+    o << "~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+    o << "SIGNED FORM INFORMATION" << std::endl;
     o << "Form name: " << rhs.getName() << std::endl
       << "Grade to sign: " << rhs.getGradeToSign() << std::endl
       << "Grade to execute: " << rhs.getGradeToExecute();

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/06 22:45:16 by dsydelny          #+#    #+#             */
+/*   Updated: 2024/05/06 22:48:29 by dsydelny         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -36,5 +48,5 @@ Form*   Intern::makeForm( std::string name, std::string target ) {
         }
     }
     std::cout << "Intern cannot create " << name << " form" << std::endl;
-    return nullptr;
+    return NULL;
 }
