@@ -17,5 +17,21 @@ void    ShrubberyCreationForm::execute( const Bureaucrat& executor ) const {
     else if ( executor.getGrade() > this->getGradeToExecute() ) {
         throw Form::GradeTooLowException();
     }
-
+    std::ofstream file;
+    file.open(( this->getName() + "_shrubbery" ).c_str());
+    file << "                                  # #### #### " << std::endl;
+    file << "                             ### /#|### |/#### " << std::endl;
+    file << "                            ##/#/ ||/##/_/##/_# " << std::endl;
+    file << "                          ###  /###|/ / # ### " << std::endl;
+    file << "                        ##__#_## | #/###_/_#### " << std::endl;
+    file << "                       ## #### #  #| /  #### ##/## " << std::endl;
+    file << "                        __#_--###`  |{,###---###-~ " << std::endl;
+    file << "                                   }{{ " << std::endl;
+    file << "                                   }}{ " << std::endl;
+    file << "                                   }}{ " << std::endl;
+    file << "                                   {{} " << std::endl;
+    file << "                             , -=-~{ .-^- _  " << std::endl;
+    file << "                                   `} " << std::endl;
+    file << "                                    { " << std::endl;
+    file.close();
 }

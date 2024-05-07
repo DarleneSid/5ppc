@@ -6,7 +6,7 @@
 /*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 22:38:07 by dsydelny          #+#    #+#             */
-/*   Updated: 2024/05/06 22:38:07 by dsydelny         ###   ########.fr       */
+/*   Updated: 2024/05/07 22:57:48 by dsydelny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main( void )
 {
 
     try {
-        Bureaucrat bureaucrat("ash", 2); // error with 200
+        Bureaucrat bureaucrat("ash", 130); // error with 200
         ShrubberyCreationForm form1("Shrubbery");
         RobotomyRequestForm form2("Robotomy");
         PresidentialPardonForm form3("President");
