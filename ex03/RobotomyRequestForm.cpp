@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/08 22:33:33 by dsydelny          #+#    #+#             */
+/*   Updated: 2024/05/08 22:33:33 by dsydelny         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target ) : Form("Robotomy Request Form", 72, 45), _target(target) {}
@@ -17,9 +29,9 @@ void    RobotomyRequestForm::execute(const Bureaucrat& executor) const {
     else {
         static int  i;
         if ( i % 2 == 0 )
-            std::cout << "BZZZZZT! " << _target << " has been robotomized!" << std::endl;
+            std::cout << "* drilling noises * " << _target << " has been robotomized successfully!" << std::endl;
         else
-            std::cout << "Robotomy failed! " << _target << " is still alive." << std::endl;
+            std::cout << "Oooops! Robotomy failed!" << std::endl;
         i++;
     }
 }

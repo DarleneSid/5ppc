@@ -6,7 +6,7 @@
 /*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 22:37:40 by dsydelny          #+#    #+#             */
-/*   Updated: 2024/05/06 22:37:40 by dsydelny         ###   ########.fr       */
+/*   Updated: 2024/05/08 22:30:30 by dsydelny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,12 @@ void    Form::beSigned(const Bureaucrat& bureaucrat) {
     _signed = true;
 }
 
-std::ostream&   operator<<( std::ostream &o, const Form& rhs ) {
-    o << "------------- Form Info -------------" << std::endl;
+std::ostream&   operator<<( std::ostream &o, const Form& rhs )
+{
+    o << "~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+    o << "SIGNED FORM INFORMATION" << std::endl;
     o << "Form name: " << rhs.getName() << std::endl
       << "Grade to sign: " << rhs.getGradeToSign() << std::endl
-      << "Grade to execute: " << rhs.getGradeToExecute() << std::endl;;
+      << "Grade to execute: " << rhs.getGradeToExecute();
     return o;
 }

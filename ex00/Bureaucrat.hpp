@@ -6,7 +6,7 @@
 /*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 21:12:28 by dsydelny          #+#    #+#             */
-/*   Updated: 2024/05/06 21:41:50 by dsydelny         ###   ########.fr       */
+/*   Updated: 2024/05/08 22:28:07 by dsydelny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,4 @@ class Bureaucrat
 
 std::ostream&   operator<<( std::ostream& o, const Bureaucrat& rhs );
 
-#endif // BUREAUCRAT_HPP
+#endif

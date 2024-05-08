@@ -6,7 +6,7 @@
 /*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 22:37:59 by dsydelny          #+#    #+#             */
-/*   Updated: 2024/05/06 22:37:59 by dsydelny         ###   ########.fr       */
+/*   Updated: 2024/05/08 22:30:50 by dsydelny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ public:
 
     virtual void        execute( const Bureaucrat& executor ) const = 0;
 
-    /* ---------------- Exception Classes ---------------- */
     class GradeTooHighException : public std::exception {
         public:
             virtual const char* what() const throw() { return "Grade too high"; }
@@ -60,4 +59,4 @@ public:
 
 std::ostream&   operator<<( std::ostream& o, const Form& rhs );
 
-#endif // FORM_HPP
+#endif

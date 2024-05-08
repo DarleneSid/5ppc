@@ -6,7 +6,7 @@
 /*   By: dsydelny <dsydelny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 22:45:16 by dsydelny          #+#    #+#             */
-/*   Updated: 2024/05/06 22:48:29 by dsydelny         ###   ########.fr       */
+/*   Updated: 2024/05/08 22:20:03 by dsydelny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Intern::Intern( const Intern& src ) {
 Intern::~Intern() {}
 
 Intern& Intern::operator=( const Intern& rhs ) {
-    ( void ) rhs;
+    (void) rhs;
     return (*this);
 }
 
@@ -36,9 +36,9 @@ Form*   Intern::makeForm( std::string name, std::string target ) {
         "shrubbery creation"
     };
     Form*    forms[] = {
-        new RobotomyRequestForm( target ),
-        new PresidentialPardonForm( target ),
-        new ShrubberyCreationForm( target )
+        new RobotomyRequestForm(target),
+        new PresidentialPardonForm(target),
+        new ShrubberyCreationForm(target)
     };
     
     for ( int i(0); i < 3; i++ ) {
